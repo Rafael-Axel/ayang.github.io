@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Untuk Ayangku</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <style>
+    @font-face {
+      font-family: 'Dosis-Bold';
+      src: url('font/Dosis-Bold.ttf') format('truetype');
+    }
+
+    body {
+      font-family: 'Dosis-Bold', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: #ffecf2;
+      animation: gradientAnimation 15s ease infinite;
+      cursor: url('gif/pack2662.png'), auto;
+      overflow: hidden;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-color: #ffecf2; }
+      25% { background-color: #ff8ba7; }
+      50% { background-color: #f64a73; }
+      75% { background-color: #e71d36; }
+      100% { background-color: #ffecf2; }
+    }
+
+    .content {
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      color: #fff;
+      text-shadow: 1px 1px 2px #f48fb1;
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+    h3 { color: #000; font-size: 1rem; }
+
+    .cat-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .cat-images img {
+      width: 100px;
+      border-radius: 8px;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      font-weight: bold;
+      padding: 10px 20px;
+      font-size: 16px;
+      transition: transform 0.2s;
+    }
+
+    .btn-primary, .btn-danger {
+      background-color: #ff4081;
+      border-color: #ff4081;
+      color: #fff;
+    }
+
+    .btn-primary:hover, .btn-danger:hover {
+      background-color: #f50057;
+      border-color: #f50057;
+    }
+
+    #message {
+      display: none;
+      font-size: 16px;
+      margin-top: 20px;
+      animation: pulse 2s infinite;
+      background: rgba(255, 255, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: #ffecf2;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.25rem; }
+      h3 { font-size: 0.9rem; }
+      .btn { font-size: 14px; padding: 8px 16px; }
+      .cat-images img { width: 80px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h2>Sayangku Cintaku Syabilla, kamu</h2>
+    <h1>Kamu sayang aku gak?!</h1>
+
+    <div class="cat-images">
+      <img src="gif/cat-love.gif" alt="Cat Love">
+      <img src="gif/goma-goma-cat.gif" alt="Goma Goma Cat">
+      <img src="gif/mochi-mochimochi.gif" alt="Mochi Mochimochi Cat">
+    </div>
+
+    <h3>Gak Boleh pencet NO ya sayang, apalagi sampai dispam</h3>
+
+    <div class="button-container">
+      <button id="yesButton" class="btn btn-primary">Yes</button>
+      <button id="noButton" class="btn btn-danger">No</button>
+    </div>
+
+    <div id="message">Serius kamu ga sayang aku??(╥﹏╥)</div>
+  </div>
+
+  <script>
+    const yesButton = document.getElementById('yesButton');
+    const noButton = document.getElementById('noButton');
+    const message = document.getElementById('message');
+    let count = 0;
+
+    yesButton.addEventListener('click', () => {
+      window.location.href = 'nextpage.html';
+    });
+
+    function moveButton() {
+      const maxX = window.innerWidth - noButton.offsetWidth;
+      const maxY = window.innerHeight - noButton.offsetHeight;
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      noButton.style.position = 'absolute';
+      noButton.style.left = `${randomX}px`;
+      noButton.style.top = `${randomY}px`;
+
+      count++;
+      if (count >= 5) {
+        message.style.display = 'block';
+      }
+    }
+
+    noButton.addEventListener('mouseenter', moveButton);
+    noButton.addEventListener('touchstart', moveButton);
+  </script>
+</body>
+</html>

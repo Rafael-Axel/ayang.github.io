@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Untuk Ayang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css"> 
+  <style>
+    @font-face {
+      font-family: 'Dosis-Bold';
+      src: url('font/Dosis-Bold.ttf') format('truetype');
+    }
+
+    body {
+      font-family: 'Dosis-Bold', sans-serif; 
+      cursor: url('gif/paw1.png'), auto; 
+      margin: 0; 
+      padding: 0; 
+      min-height: 100vh; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffecf2;
+      animation: gradientAnimation 15s ease infinite; 
+      overflow: hidden;
+      position: relative;
+    }
+
+    @keyframes gradientAnimation {
+      0%, 100% { background-color: #ffecf2; }
+      25%, 50%, 75% { background-color: #f64a73; }
+    }
+
+    .content {
+      text-align: center;
+      z-index: 1;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 10vw;
+      color: #ffffff;
+      text-shadow: 2px 2px 2px #f48fb1;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 5.5vw;
+      color: #ffffff;
+      text-shadow: 2px 2px 2px #f48fb1;
+      margin-bottom: 5vw;
+    }
+
+    .heart-gif {
+      width: 70vw;
+      max-width: 500px;
+      height: auto;
+    }
+
+    .side-image {
+      position: absolute;
+      width: 20vw;
+      max-width: 150px;
+      height: auto;
+      z-index: 0;
+    }
+
+    .left-top    { top: 0; left: 0; transform: translate(-30%, -30%) rotate(135deg); }
+    .right-top   { top: 0; right: 0; transform: translate(30%, -30%) rotate(-135deg); }
+    .left-bottom { bottom: 0; left: 0; transform: translate(-30%, 30%) rotate(45deg); }
+    .right-bottom{ bottom: 0; right: 0; transform: translate(30%, 30%) rotate(-45deg); }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 14vw; }
+      h2 { font-size: 7vw; }
+      .heart-gif { width: 80vw; }
+      .side-image { width: 30vw; max-width: 100px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>♡</h1>
+    <h2>YES!! LOVE YOU MORE SAYANG</h2>
+    <img src="gif/heart-love.gif" alt="Heart Love" class="heart-gif">
+  </div>
+
+  <img src="gif/43f5bbaf17d061377206243140e855d8.gif" alt="Top Left" class="side-image left-top">
+  <img src="gif/cat_-vodk.gif" alt="Top Right" class="side-image right-top">
+  <img src="gif/peach-goma-peach-and-goma.gif" alt="Bottom Left" class="side-image left-bottom">
+  <img src="gif/peach-and-goma-peach-goma.gif" alt="Bottom Right" class="side-image right-bottom">
+</body>
+</html>
