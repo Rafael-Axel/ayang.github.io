@@ -13,17 +13,17 @@
 
     body {
       font-family: 'Dosis-Bold', sans-serif;
+      cursor: url('gif/pack2662.png'), auto;
+      overflow: hidden;
       margin: 0;
       padding: 0;
+      width: 100vw;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      background: #ffecf2;
+      position: relative;
       animation: gradientAnimation 15s ease infinite;
-      cursor: url('gif/pack2662.png'), auto;
-      overflow: hidden;
     }
 
     @keyframes gradientAnimation {
@@ -34,19 +34,33 @@
       100% { background-color: #ffecf2; }
     }
 
-    .content {
-      max-width: 600px;
-      padding: 20px;
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
-    h1, h2, h3 {
-      color: #fff;
-      text-shadow: 1px 1px 2px #f48fb1;
+    h1 {
+      font-size: 28px;
+      color: #ffffff;
+      text-shadow: 1px 1px 1px #f48fb1;
+      margin-bottom: 15px;
     }
 
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.5rem; margin-bottom: 1rem; }
-    h3 { color: #000; font-size: 1rem; }
+    h2 {
+      font-size: 24px;
+      color: #ffffff;
+      text-shadow: 1px 1px 1px #f48fb1;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 16px;
+      color: #000000;
+      text-shadow: 1px 1px 1px #f48fb1;
+      margin-bottom: 10px;
+    }
 
     .cat-images {
       display: flex;
@@ -54,104 +68,148 @@
       justify-content: center;
       gap: 10px;
       margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     .cat-images img {
-      width: 100px;
+      width: 120px;
+      height: auto;
       border-radius: 8px;
     }
 
     .button-container {
       display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
       justify-content: center;
-    }
-
-    .btn {
-      font-weight: bold;
-      padding: 10px 20px;
-      font-size: 16px;
-      transition: transform 0.2s;
+      margin-bottom: 20px;
     }
 
     .btn-primary, .btn-danger {
-      background-color: #ff4081;
-      border-color: #ff4081;
-      color: #fff;
+      font-weight: bold;
+      padding: 8px 20px;
+      font-size: 18px;
+      color: #ffecf2;
+      position: absolute;
+      top: 70%;
     }
 
-    .btn-primary:hover, .btn-danger:hover {
+    .btn-primary {
+      background-color: #ff4081;
+      border-color: #ff4081;
+      left: 40%;
+    }
+
+    .btn-primary:hover {
       background-color: #f50057;
       border-color: #f50057;
     }
 
+    .btn-danger {
+      background-color: #ff4081;
+      border-color: #ff4081;
+      left: 54%;
+      transition: transform 0.1s;
+    }
+
     #message {
-      display: none;
       font-size: 16px;
-      margin-top: 20px;
+      display: none;
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       animation: pulse 2s infinite;
-      background: rgba(255, 255, 0, 0.5);
-      padding: 10px 20px;
+      background-color: rgba(255, 255, 0, 0.5);
       border-radius: 8px;
+      padding: 5px 20px;
       color: #ffecf2;
     }
 
     @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.2); opacity: 1; }
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+      50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+      100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
     }
 
-    @media (max-width: 768px) {
-      h1 { font-size: 1.75rem; }
-      h2 { font-size: 1.25rem; }
-      h3 { font-size: 0.9rem; }
-      .btn { font-size: 14px; padding: 8px 16px; }
-      .cat-images img { width: 80px; }
+    @media screen and (max-width: 768px) {
+      h1 { font-size: 24px; }
+      h2 { font-size: 20px; }
+      h3 { font-size: 14px; }
+      .cat-images img { width: 100px; }
+      .btn-primary, .btn-danger { padding: 6px 14px; font-size: 14px; }
+      #message { font-size: 14px; }
     }
   </style>
 </head>
 <body>
-  <div class="content">
-    <h2>Sayangku Cintaku Syabilla, kamu</h2>
+  <div class="container text-center">
+    <h2 id="typingIntro"></h2>
     <h1>Kamu sayang aku gak?!</h1>
-
     <div class="cat-images">
       <img src="gif/cat-love.gif" alt="Cat Love">
       <img src="gif/goma-goma-cat.gif" alt="Goma Goma Cat">
       <img src="gif/mochi-mochimochi.gif" alt="Mochi Mochimochi Cat">
     </div>
-
-    <h3>Gak Boleh pencet NO ya sayang, apalagi sampai dispam</h3>
-
+    <h3>Gak Boleh pencet NO ya sayang, apalagi sampai dispam NO</h3>
     <div class="button-container">
       <button id="yesButton" class="btn btn-primary">Yes</button>
       <button id="noButton" class="btn btn-danger">No</button>
     </div>
-
-    <div id="message">Serius kamu ga sayang aku??(╥﹏╥)</div>
+    <div id="message">Serius kamu ga sayang aku?? (╥﹏╥)</div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script>
-    const yesButton = document.getElementById('yesButton');
+    // Typing effect for intro
+    const introText = "Sayangku Cintaku Syabilla, kamu...";
+    let idx = 0;
+    function typeIntro() {
+      if (idx < introText.length) {
+        document.getElementById("typingIntro").innerHTML += introText.charAt(idx);
+        idx++;
+        setTimeout(typeIntro, 60);
+      }
+    }
+    typeIntro();
+
+    // Confetti on Yes click
+    document.getElementById('yesButton').addEventListener('click', function() {
+      confetti({
+        particleCount: 150,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+      setTimeout(() => {
+        window.location.href = 'nextpage.html';
+      }, 1000);
+    });
+
+    // Heart trail
+    document.addEventListener("mousemove", function(e) {
+      const heart = document.createElement("div");
+      heart.textContent = "💖";
+      heart.style.position = "fixed";
+      heart.style.left = e.pageX + "px";
+      heart.style.top = e.pageY + "px";
+      heart.style.pointerEvents = "none";
+      heart.style.fontSize = "18px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 600);
+    });
+
+    // No button behavior
     const noButton = document.getElementById('noButton');
     const message = document.getElementById('message');
     let count = 0;
 
-    yesButton.addEventListener('click', () => {
-      window.location.href = 'nextpage.html';
-    });
-
     function moveButton() {
-      const maxX = window.innerWidth - noButton.offsetWidth;
-      const maxY = window.innerHeight - noButton.offsetHeight;
-      const randomX = Math.floor(Math.random() * maxX);
-      const randomY = Math.floor(Math.random() * maxY);
-
-      noButton.style.position = 'absolute';
-      noButton.style.left = `${randomX}px`;
-      noButton.style.top = `${randomY}px`;
-
+      const maxX = window.innerWidth - noButton.clientWidth;
+      const maxY = window.innerHeight - noButton.clientHeight;
+      const newX = Math.floor(Math.random() * maxX);
+      const newY = Math.floor(Math.random() * maxY);
+      noButton.style.left = newX + 'px';
+      noButton.style.top = newY + 'px';
+      noButton.style.transition = 'left 0.2s, top 0.2s';
       count++;
       if (count >= 3) {
         message.style.display = 'block';
